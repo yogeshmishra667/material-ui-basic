@@ -8,16 +8,19 @@ export default function Check() {
   const [checked, setChecked] = useState(true);
   return (
     <div>
-      <FormControlLabel label="yogesh mishra">
-        <Checkbox
-          size="small"
-          checked={checked}
-          icon={<BluetoothDisabledIcon />}
-          checkedIcon={<BluetoothAudioIcon />}
-          onChange={(e) => setChecked(e.target.checked)}
-          color="primary"
-        ></Checkbox>
-      </FormControlLabel>
+      <FormControlLabel
+        control={
+          <Checkbox
+            size="small"
+            checked={checked}
+            icon={<BluetoothDisabledIcon />}
+            checkedIcon={<BluetoothAudioIcon />}
+            onChange={(e) => setChecked(e.target.checked)}
+            color="primary"
+          ></Checkbox>
+        }
+        label="bluetooth"
+      />
     </div>
   );
 }
