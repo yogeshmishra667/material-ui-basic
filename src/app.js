@@ -8,8 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import CustomStyle from './components/custom-style';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { orange, green } from '@material-ui/core/colors';
-import typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import 'fontsource-roboto';
+import Grid from './components/grid';
 
 //create and modify theme
 const theme = createMuiTheme({
@@ -34,27 +35,25 @@ const theme = createMuiTheme({
 export default function App() {
   return (
     //for theme
-    <ThemeProvider theme={theme}>
-      {/* if yo want to add two primary color you can also use two theme provider */}
-      <TextField variant="outlined" label="name" />
-      <Typography
-        variant="subtitle1"
-        component="div"
-        align="center"
-        color="error"
-      >
-        this is typography
-      </Typography>
-      <Checkbox></Checkbox>
-      <CustomStyle />
-      <ButtonGroup variant="contained">
-        <Button startIcon={<SaveIcon />} color="primary">
-          save
-        </Button>
-        <Button color="secondary" startIcon={<DeleteIcon />}>
-          delete
-        </Button>
-      </ButtonGroup>
-    </ThemeProvider>
+    <Container maxWidth="sm">
+      <ThemeProvider theme={theme}>
+        {/* if yo want to add two primary color you can also use two theme provider */}
+        <TextField variant="outlined" label="name" />
+        <Typography variant="subtitle1" component="div" color="error">
+          this is typography
+        </Typography>
+        <Grid />
+        <Checkbox></Checkbox>
+        <CustomStyle />
+        <ButtonGroup variant="contained">
+          <Button startIcon={<SaveIcon />} color="primary">
+            save
+          </Button>
+          <Button color="secondary" startIcon={<DeleteIcon />}>
+            delete
+          </Button>
+        </ButtonGroup>
+      </ThemeProvider>
+    </Container>
   );
 }
