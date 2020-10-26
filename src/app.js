@@ -2,12 +2,14 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { ButtonGroup } from '@material-ui/core';
+import { ButtonGroup, Typography } from '@material-ui/core';
 import Checkbox from './components/checkbox';
 import TextField from '@material-ui/core/TextField';
 import CustomStyle from './components/custom-style';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { orange, green } from '@material-ui/core/colors';
+import typography from '@material-ui/core/Typography';
+import 'fontsource-roboto';
 
 //create and modify theme
 const theme = createMuiTheme({
@@ -19,6 +21,14 @@ const theme = createMuiTheme({
       main: green[500],
     },
   },
+
+  // theme for typography (customize subtitle1 property)
+  typography: {
+    subtitle1: {
+      fontSize: '30px',
+      fontWeight: 'bold',
+    },
+  },
 });
 
 export default function App() {
@@ -27,6 +37,14 @@ export default function App() {
     <ThemeProvider theme={theme}>
       {/* if yo want to add two primary color you can also use two theme provider */}
       <TextField variant="outlined" label="name" />
+      <Typography
+        variant="subtitle1"
+        component="div"
+        align="center"
+        color="error"
+      >
+        this is typography
+      </Typography>
       <Checkbox></Checkbox>
       <CustomStyle />
       <ButtonGroup variant="contained">
