@@ -11,6 +11,7 @@ import { orange, green } from '@material-ui/core/colors';
 import Container from '@material-ui/core/Container';
 import 'fontsource-roboto';
 import Grid from './components/grid';
+import Navbar from './components/navbar';
 
 //create and modify theme
 const theme = createMuiTheme({
@@ -38,6 +39,7 @@ export default function App() {
     <Container maxWidth="sm">
       <ThemeProvider theme={theme}>
         {/* if yo want to add two primary color you can also use two theme provider */}
+        <Navbar />
         <TextField variant="outlined" label="name" />
         <Typography variant="subtitle1" component="div" color="error">
           this is typography
